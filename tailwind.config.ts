@@ -52,16 +52,25 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				'dawn-blue': 'hsl(var(--dawn-blue))',
+				'dawn-blue-dark': 'hsl(var(--dawn-blue-dark))',
+				'dawn-orange': 'hsl(var(--dawn-orange))',
+				'dawn-orange-dark': 'hsl(var(--dawn-orange-dark))',
+				'dawn-gray': 'hsl(var(--dawn-gray))',
+				'dawn-gray-light': 'hsl(var(--dawn-gray-light))',
+			},
+			backgroundImage: {
+				'gradient-dawn': 'var(--gradient-dawn)',
+				'gradient-subtle': 'var(--gradient-subtle)',
+				'gradient-card': 'var(--gradient-card)',
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+			},
+			boxShadow: {
+				'glow': 'var(--shadow-glow)',
+				'card': 'var(--shadow-card)',
+				'button': 'var(--shadow-button)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
