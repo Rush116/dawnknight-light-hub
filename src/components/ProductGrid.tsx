@@ -17,6 +17,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+// Import product images
+import h7Image from "@/assets/dawn-knight-h7.jpg";
+import h1Image from "@/assets/dawn-knight-h1.jpg";
+import h11Image from "@/assets/dawn-knight-h11.jpg";
+import h4Image from "@/assets/dawn-knight-h4.jpg";
+import h3Image from "@/assets/dawn-knight-h3.jpg";
+import h9005Image from "@/assets/dawn-knight-9005.jpg";
+
 interface Product {
   id: number;
   name: string;
@@ -36,12 +44,12 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    name: "Dawn Knight H7 6000K",
+    name: "Dawn Knight H7 Premium 6000K",
     price: 2890,
     oldPrice: 3490,
     rating: 4.9,
     reviews: 456,
-    image: "/api/placeholder/300/300",
+    image: h7Image,
     socket: "H7",
     power: "35W",
     color: "6000K",
@@ -51,11 +59,11 @@ const products: Product[] = [
   },
   {
     id: 2,
-    name: "Dawn Knight H1 5000K",
+    name: "Dawn Knight H1 Classic 5000K",
     price: 2690,
     rating: 4.8,
     reviews: 234,
-    image: "/api/placeholder/300/300",
+    image: h1Image,
     socket: "H1",
     power: "35W",
     color: "5000K",
@@ -63,12 +71,12 @@ const products: Product[] = [
   },
   {
     id: 3,
-    name: "Dawn Knight H11 6000K",
+    name: "Dawn Knight H11 Ultra 6000K",
     price: 3190,
     oldPrice: 3890,
     rating: 4.9,
     reviews: 789,
-    image: "/api/placeholder/300/300",
+    image: h11Image,
     socket: "H11",
     power: "40W",
     color: "6000K",
@@ -77,14 +85,66 @@ const products: Product[] = [
   },
   {
     id: 4,
-    name: "Dawn Knight H4 Hi/Lo",
+    name: "Dawn Knight H4 Hi/Lo Pro",
     price: 4290,
+    oldPrice: 4990,
     rating: 4.7,
     reviews: 123,
-    image: "/api/placeholder/300/300",
+    image: h4Image,
     socket: "H4",
     power: "50W",
     color: "6000K",
+    isSale: true,
+    inStock: true
+  },
+  {
+    id: 5,
+    name: "Dawn Knight H3 Fog Light",
+    price: 2390,
+    rating: 4.6,
+    reviews: 167,
+    image: h3Image,
+    socket: "H3",
+    power: "30W",
+    color: "6000K",
+    inStock: true
+  },
+  {
+    id: 6,
+    name: "Dawn Knight 9005 High Beam",
+    price: 3590,
+    oldPrice: 4190,
+    rating: 4.8,
+    reviews: 298,
+    image: h9005Image,
+    socket: "9005",
+    power: "45W",
+    color: "6000K",
+    isSale: true,
+    inStock: true
+  },
+  {
+    id: 7,
+    name: "Dawn Knight H7 Warm White 4300K",
+    price: 2790,
+    rating: 4.5,
+    reviews: 145,
+    image: h7Image,
+    socket: "H7",
+    power: "35W",
+    color: "4300K",
+    inStock: true
+  },
+  {
+    id: 8,
+    name: "Dawn Knight H11 Compact",
+    price: 2990,
+    rating: 4.7,
+    reviews: 234,
+    image: h11Image,
+    socket: "H11",
+    power: "35W",
+    color: "5000K",
     inStock: false
   }
 ];
@@ -130,6 +190,10 @@ export const ProductGrid = () => {
                 <DropdownMenuItem>H4</DropdownMenuItem>
                 <DropdownMenuItem>H7</DropdownMenuItem>
                 <DropdownMenuItem>H11</DropdownMenuItem>
+                <DropdownMenuItem>9005</DropdownMenuItem>
+                <DropdownMenuItem>9006</DropdownMenuItem>
+                <DropdownMenuItem>HB3</DropdownMenuItem>
+                <DropdownMenuItem>HB4</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -168,10 +232,12 @@ export const ProductGrid = () => {
               <CardContent className="p-0">
                 {/* Image */}
                 <div className="relative overflow-hidden">
-                  <div className="aspect-square bg-muted/50 flex items-center justify-center">
-                    <div className="text-muted-foreground">
-                      LED лампа {product.socket}
-                    </div>
+                  <div className="aspect-square bg-gradient-to-br from-muted/30 to-muted/60 flex items-center justify-center p-4">
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                   
                   {/* Badges */}
