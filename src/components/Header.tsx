@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -51,7 +52,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img 
               src={dawnKnightLogo} 
               alt="Dawn Knight" 
@@ -65,7 +66,7 @@ export const Header = () => {
                 LED освещение для авто
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Search */}
           <div className="hidden md:flex flex-1 max-w-md mx-8">
@@ -119,21 +120,31 @@ export const Header = () => {
                   </div>
                   
                   <nav className="flex flex-col gap-3">
-                    <Button variant="ghost" className="justify-start">
-                      Каталог
-                    </Button>
-                    <Button variant="ghost" className="justify-start">
-                      Инструкции
-                    </Button>
-                    <Button variant="ghost" className="justify-start">
-                      Форум
-                    </Button>
-                    <Button variant="ghost" className="justify-start">
-                      Доставка
-                    </Button>
-                    <Button variant="ghost" className="justify-start">
-                      Гарантия
-                    </Button>
+                    <Link to="/">
+                      <Button variant="ghost" className="justify-start w-full">
+                        Каталог
+                      </Button>
+                    </Link>
+                    <Link to="/instructions">
+                      <Button variant="ghost" className="justify-start w-full">
+                        Инструкции
+                      </Button>
+                    </Link>
+                    <Link to="/forum">
+                      <Button variant="ghost" className="justify-start w-full">
+                        Форум
+                      </Button>
+                    </Link>
+                    <Link to="/delivery">
+                      <Button variant="ghost" className="justify-start w-full">
+                        Доставка
+                      </Button>
+                    </Link>
+                    <Link to="/warranty">
+                      <Button variant="ghost" className="justify-start w-full">
+                        Гарантия
+                      </Button>
+                    </Link>
                   </nav>
                   
                   <div className="border-t pt-4">
@@ -155,24 +166,36 @@ export const Header = () => {
       <div className="border-t border-border/40">
         <div className="container mx-auto px-4">
           <nav className="hidden md:flex items-center gap-8 py-3">
-            <Button variant="ghost" className="hover:text-primary transition-smooth">
-              Все товары
-            </Button>
-            <Button variant="ghost" className="hover:text-primary transition-smooth">
-              H1/H3/H4/H7/H11
-            </Button>
-            <Button variant="ghost" className="hover:text-primary transition-smooth">
-              Инструкции
-            </Button>
-            <Button variant="ghost" className="hover:text-primary transition-smooth">
-              Форум
-            </Button>
-            <Button variant="ghost" className="hover:text-primary transition-smooth">
-              Доставка
-            </Button>
-            <Button variant="ghost" className="hover:text-primary transition-smooth">
-              Гарантия
-            </Button>
+            <Link to="/">
+              <Button variant="ghost" className="hover:text-primary transition-smooth">
+                Все товары
+              </Button>
+            </Link>
+            <Link to="/catalog">
+              <Button variant="ghost" className="hover:text-primary transition-smooth">
+                H1/H3/H4/H7/H11
+              </Button>
+            </Link>
+            <Link to="/instructions">
+              <Button variant="ghost" className="hover:text-primary transition-smooth">
+                Инструкции
+              </Button>
+            </Link>
+            <Link to="/forum">
+              <Button variant="ghost" className="hover:text-primary transition-smooth">
+                Форум
+              </Button>
+            </Link>
+            <Link to="/delivery">
+              <Button variant="ghost" className="hover:text-primary transition-smooth">
+                Доставка
+              </Button>
+            </Link>
+            <Link to="/warranty">
+              <Button variant="ghost" className="hover:text-primary transition-smooth">
+                Гарантия
+              </Button>
+            </Link>
           </nav>
         </div>
       </div>

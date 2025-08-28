@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -92,10 +93,12 @@ export const InfoSection = () => {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center justify-between">
               <h3 className="text-2xl font-bold">Инструкции по установке</h3>
-              <Button variant="outline" size="sm">
-                Все инструкции
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link to="/instructions">
+                <Button variant="outline" size="sm">
+                  Все инструкции
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
 
             <div className="grid gap-4">
@@ -147,9 +150,11 @@ export const InfoSection = () => {
                 <p className="text-muted-foreground mb-4">
                   Наши эксперты готовы помочь с установкой любых типов ламп
                 </p>
-                <Button variant="outline" className="border-primary hover:bg-primary/10">
-                  Задать вопрос эксперту
-                </Button>
+                <Link to="/support">
+                  <Button variant="outline" className="border-primary hover:bg-primary/10">
+                    Задать вопрос эксперту
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -158,10 +163,12 @@ export const InfoSection = () => {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <h3 className="text-xl font-bold">Форум сообщества</h3>
-              <Button variant="ghost" size="sm">
-                <MessageCircle className="h-4 w-4 mr-2" />
-                Перейти в форум
-              </Button>
+              <Link to="/forum">
+                <Button variant="ghost" size="sm">
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  Перейти в форум
+                </Button>
+              </Link>
             </div>
 
             {/* Forum Stats */}
@@ -226,9 +233,11 @@ export const InfoSection = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Делитесь опытом и получайте советы от экспертов
                 </p>
-                <Button size="sm" className="w-full">
-                  Зарегистрироваться
-                </Button>
+                <Link to="/register">
+                  <Button size="sm" className="w-full">
+                    Зарегистрироваться
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
