@@ -1,3 +1,4 @@
+SYNC TEST 2026-03-02 (RUSH)
 # Welcome to your Lovable project
 
 ## Project info
