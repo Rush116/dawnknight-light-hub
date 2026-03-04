@@ -46,30 +46,30 @@ const forumTopics = [
 const instructions = [
   {
     id: 1,
-    title: "Установка H7 лампы",
-    description: "Подробная инструкция по замене галогенных ламп на светодиодные H7",
-    cars: "BMW, Mercedes, Audi",
-    difficulty: "Легко",
-    time: "15 мин",
-    icon: "🚗"
+    title: "Доступные skills",
+    description: "Используйте skill-creator для создания навыков и skill-installer для установки навыков в среду Codex.",
+    cars: "skill-creator, skill-installer",
+    difficulty: "Базовый",
+    time: "2 мин",
+    icon: "🧠"
   },
   {
     id: 2,
-    title: "Настройка H4 Hi/Lo",
-    description: "Правильная установка и настройка двухрежимных ламп H4",
-    cars: "Volkswagen, Ford, Skoda",
-    difficulty: "Средне",
-    time: "25 мин",
-    icon: "🔧"
+    title: "Как применять skills",
+    description: "Открывайте SKILL.md только при необходимости, загружайте только релевантные файлы и используйте готовые scripts/assets.",
+    cars: "SKILL.md, scripts, assets",
+    difficulty: "Средний",
+    time: "5 мин",
+    icon: "📘"
   },
   {
     id: 3,
-    title: "Установка H11 противотуманки",
-    description: "Замена штатных ламп противотуманных фар на LED H11",
-    cars: "Toyota, Honda, Nissan",
-    difficulty: "Легко",
-    time: "20 мин",
-    icon: "💡"
+    title: "Координация и fallback",
+    description: "Если подходит несколько skills — используйте минимальный набор по порядку, а при блокировке указывайте проблему и применяйте запасной подход.",
+    cars: "Sequencing, fallback",
+    difficulty: "Продвинутый",
+    time: "4 мин",
+    icon: "🛡️"
   }
 ];
 
