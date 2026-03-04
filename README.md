@@ -64,6 +64,23 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/aa9485db-ca0b-4e4a-bfff-fcaf9e0d002e) and click on Share -> Publish.
 
+
+## Auto-update (Lovable deploy)
+
+Теперь в репозитории есть workflow **Lovable Auto Deploy** (`.github/workflows/lovable-auto-deploy.yml`).
+
+Что он делает:
+- запускается при push в `main` / `master` / `work` и вручную (`workflow_dispatch`);
+- устанавливает зависимости и проверяет, что проект собирается (`npm run build`);
+- если в GitHub Secrets задан `LOVABLE_DEPLOY_WEBHOOK`, отправляет POST-запрос и триггерит авто-публикацию.
+
+### Как включить авто-деплой
+1. Откройте репозиторий → **Settings → Secrets and variables → Actions**.
+2. Добавьте секрет `LOVABLE_DEPLOY_WEBHOOK` со ссылкой вашего deploy webhook (из вашей deploy-интеграции).
+3. После этого каждый push в указанные ветки будет автоматически запускать деплой-триггер.
+
+> Если секрет не задан, workflow всё равно проверит сборку и завершится без ошибки деплоя.
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
