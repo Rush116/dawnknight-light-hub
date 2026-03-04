@@ -1,90 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Dawn Knight LED Store Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    /* Dark automotive theme */
-    --background: 220 15% 8%;
-    --foreground: 220 5% 95%;
+    --background: 223 31% 7%;
+    --foreground: 220 20% 96%;
 
-    --card: 220 15% 10%;
-    --card-foreground: 220 5% 95%;
+    --card: 223 28% 10%;
+    --card-foreground: 220 20% 95%;
 
-    --popover: 220 15% 10%;
-    --popover-foreground: 220 5% 95%;
+    --popover: 223 28% 11%;
+    --popover-foreground: 220 20% 95%;
 
-    /* Brand primary - Dawn Knight Blue */
-    --primary: 215 95% 50%;
-    --primary-foreground: 220 15% 8%;
-    
-    /* LED Orange accent */
-    --secondary: 25 95% 55%;
-    --secondary-foreground: 220 15% 8%;
+    --primary: 211 100% 62%;
+    --primary-foreground: 223 31% 8%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 5% 65%;
+    --secondary: 28 89% 57%;
+    --secondary-foreground: 220 20% 10%;
 
-    --accent: 215 95% 50%;
-    --accent-foreground: 220 15% 8%;
+    --muted: 223 19% 17%;
+    --muted-foreground: 221 10% 70%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 220 5% 95%;
+    --accent: 223 20% 15%;
+    --accent-foreground: 220 20% 95%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 215 95% 50%;
+    --destructive: 0 78% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.75rem;
+    --border: 222 20% 20%;
+    --input: 222 20% 16%;
+    --ring: 211 100% 62%;
 
-    /* Custom design tokens */
-    --dawn-blue: 215 95% 50%;
-    --dawn-blue-dark: 215 95% 35%;
-    --dawn-orange: 25 95% 55%;
-    --dawn-orange-dark: 25 95% 45%;
-    --dawn-gray: 220 15% 15%;
-    --dawn-gray-light: 220 15% 25%;
-    
-    /* Gradients */
-    --gradient-dawn: linear-gradient(135deg, hsl(var(--dawn-blue)), hsl(var(--dawn-orange)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--dawn-gray)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--dawn-gray)));
-    
-    /* Shadows */
-    --shadow-glow: 0 0 20px hsl(var(--dawn-blue) / 0.3);
-    --shadow-card: 0 8px 32px hsl(220 15% 5% / 0.4);
-    --shadow-button: 0 4px 16px hsl(var(--dawn-blue) / 0.3);
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --radius: 0.875rem;
+
+    --gradient-dawn: linear-gradient(135deg, hsl(211 100% 62% / 0.2), hsl(28 89% 57% / 0.1));
+    --gradient-subtle: radial-gradient(circle at 20% 10%, hsl(211 100% 62% / 0.12), transparent 40%),
+      radial-gradient(circle at 85% 20%, hsl(28 89% 57% / 0.1), transparent 30%),
+      hsl(var(--background));
+    --gradient-card: linear-gradient(160deg, hsl(223 28% 12%), hsl(223 24% 9%));
+
+    --shadow-card: 0 20px 40px hsl(222 80% 3% / 0.45);
+    --shadow-button: 0 10px 24px hsl(211 100% 45% / 0.35);
+    --shadow-glow: 0 0 30px hsl(211 100% 62% / 0.2);
   }
 
-  .light {
-    --background: 0 0% 98%;
-    --foreground: 220 15% 15%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
-    --primary: 215 95% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 25 95% 55%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 220 5% 95%;
-    --muted-foreground: 220 5% 45%;
-    --accent: 215 95% 50%;
-    --accent-foreground: 0 0% 100%;
-    --border: 220 5% 85%;
-    --input: 220 5% 90%;
-    --ring: 215 95% 50%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
@@ -94,88 +56,29 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-muted;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-primary rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/80;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
 
 @layer components {
-  /* Glow effects */
-  .glow-blue {
-    box-shadow: var(--shadow-glow);
-  }
-  
-  .glow-card {
+  .surface-card {
+    @apply bg-gradient-card border border-border/80 rounded-xl;
     box-shadow: var(--shadow-card);
   }
-  
-  /* Gradient backgrounds */
-  .gradient-dawn {
-    background: var(--gradient-dawn);
+
+  .premium-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
-  
-  .gradient-subtle {
-    background: var(--gradient-subtle);
-  }
-  
-  .gradient-card {
-    background: var(--gradient-card);
-  }
-  
-  /* Text gradients */
+
   .text-gradient {
-    background: var(--gradient-dawn);
+    background: linear-gradient(95deg, hsl(211 100% 74%), hsl(28 89% 70%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
-  /* Smooth transitions */
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-  
-  .transition-bounce {
-    transition: var(--transition-bounce);
-  }
-  
-  /* Hover effects */
-  .hover-lift {
-    @apply transition-smooth;
-  }
-  
-  .hover-lift:hover {
-    @apply -translate-y-1 shadow-lg;
-  }
-  
-  .hover-glow:hover {
-    box-shadow: var(--shadow-glow);
-  }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
+  .section-space {
+    @apply py-16 md:py-20;
   }
 }
