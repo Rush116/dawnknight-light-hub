@@ -1,0 +1,49 @@
+name: Lovable Auto Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - work
+  workflow_dispatch:
+
+concurrency:
+  group: lovable-auto-deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Trigger Lovable deploy webhook
+        if: ${{ secrets.LOVABLE_DEPLOY_WEBHOOK != '' }}
+        run: |
+          curl -X POST "$LOVABLE_DEPLOY_WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d '{"source":"github-actions","repo":"${{ github.repository }}","sha":"${{ github.sha }}"}'
+        env:
+          LOVABLE_DEPLOY_WEBHOOK: ${{ secrets.LOVABLE_DEPLOY_WEBHOOK }}
+
+      - name: Deployment hint
+        if: ${{ secrets.LOVABLE_DEPLOY_WEBHOOK == '' }}
+        run: |
+          echo "LOVABLE_DEPLOY_WEBHOOK secret is not set."
+          echo "Build passed; set webhook secret to enable automatic publish trigger."
